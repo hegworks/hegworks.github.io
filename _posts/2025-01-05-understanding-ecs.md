@@ -4,6 +4,9 @@ date: 2025-01-05 12:00:00 +0100
 categories: [articles, architecture]
 tags: [game-development, cpp, architecture, ecs]
 description: A deep dive into Entity Component System architecture, exploring why it's become the dominant pattern in modern game engines and how to implement it effectively.
+image:
+  path: /assets/img/posts/ecs-header.jpg
+  alt: Entity Component System Architecture Diagram
 ---
 
 Entity Component System (ECS) has revolutionized game engine architecture over the past decade. If you've worked with Unity's DOTS, Unreal's Mass Entity, or libraries like EnTT, you've encountered this powerful pattern.

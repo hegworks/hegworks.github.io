@@ -5,6 +5,9 @@ categories: [projects, game-engine]
 tags: [cpp, opengl, entt, imgui, engine-development]
 description: A custom-built game engine featuring ECS architecture, advanced rendering, and comprehensive tooling for game development
 pin: true
+image:
+  path: /assets/img/posts/game-engine-header.jpg
+  alt: Custom Game Engine Editor Screenshot
 ---
 
 A custom game engine built from scratch as part of my studies at Breda University of Applied Sciences. The engine demonstrates modern game development practices and architectural patterns.
