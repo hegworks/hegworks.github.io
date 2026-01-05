@@ -11,7 +11,7 @@ order: 4
   </p>
   
   <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin: 2rem 0 3rem;">
-    <a href="/categories/projects/" style="display: inline-block; padding: 0.75rem 2rem; text-decoration: none; border-radius: 0.5rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; font-weight: 500; transition: all 0.3s;">
+    <a href="/categories/projects/" style="display: inline-block; padding: 0.75rem 2rem; text-decoration: none; border-radius: 0.5rem; background: linear-gradient(135deg, #66ea78ff 0%, #4b74a2ff 100%); color: white; font-weight: 500; transition: all 0.3s;">
       <i class="fas fa-rocket"></i> View Projects
     </a>
     <a href="/categories/articles/" style="display: inline-block; padding: 0.75rem 2rem; text-decoration: none; border-radius: 0.5rem; border: 2px solid #667eea; color: #667eea; font-weight: 500; transition: all 0.3s;">
