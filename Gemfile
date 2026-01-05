@@ -13,4 +13,8 @@ gem "wdm", "~> 0.2", platforms: [:windows]
 group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.12"
   gem "jekyll-seo-tag"
+  gem "jekyll-sitemap"
+  gem "jekyll-paginate"
+  gem "jekyll-remote-theme", "~> 0.4.3"
+  gem "jemoji"
 end

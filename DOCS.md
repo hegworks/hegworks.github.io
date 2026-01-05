@@ -8,6 +8,7 @@ Quick guide to all documentation files in this repository.
 
 ## For Developers (You!)
 
+- **[THEME-SETUP.md](THEME-SETUP.md)** - ⭐ START HERE - TeXt theme setup & quick start
 - **[DEVELOPER.md](DEVELOPER.md)** - Complete development guide
   - Project structure
   - Adding content (projects & articles)
@@ -30,6 +31,7 @@ Quick guide to all documentation files in this repository.
 ## Other Files
 
 - **[LICENSE](LICENSE)** - MIT License
+- **[assets/images/README.md](assets/images/README.md)** - Image guidelines
 
 ---
 
@@ -37,6 +39,7 @@ Quick guide to all documentation files in this repository.
 
 | I want to... | See this file |
 |-------------|---------------|
+| Get started with TeXt theme | [THEME-SETUP.md](THEME-SETUP.md) |
 | Add a new project | [DEVELOPER.md](DEVELOPER.md#adding-a-new-project) |
 | Add a new article | [DEVELOPER.md](DEVELOPER.md#adding-a-new-article) |
 | Change colors/styling | [DEVELOPER.md](DEVELOPER.md#styling) |

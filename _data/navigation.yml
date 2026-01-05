@@ -1,0 +1,10 @@
+header:
+  - titles:
+      en: Home
+    url: /
+  - titles:
+      en: Projects
+    url: /projects/
+  - titles:
+      en: Articles
+    url: /articles/

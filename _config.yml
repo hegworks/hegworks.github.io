@@ -1,11 +1,52 @@
-# Site settings
+# Site Settings
 title: HegWorks
-description: My personal website for projects and articles
+description: Game Engine Programmer | Building tools and engines from scratch
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site
 
-# Build settings
+# Author
+author:
+  name: Hesam
+  bio: Game Engine Programming student at BUas. I build tools and engines from scratch.
+  avatar: # /assets/images/avatar.jpg - Add your avatar image here
+  email: # your.email@example.com
+  github: # yourusername
+
+# Theme
+remote_theme: kitian616/jekyll-TeXt-theme
+
+# Text Theme Configurations
+text_skin: dark
+highlight_theme: tomorrow-night
+
+# Table of Contents
+toc:
+  selectors: "h1,h2,h3"
+
+# Markdown Extensions
 markdown: kramdown
+kramdown:
+  math_engine: mathjax
+  syntax_highlighter: rouge
+
+# Enable Extensions
+mathjax: true
+mathjax_autoNumber: true
+mermaid: true
+chart: true
+
+# Build settings
+permalink: /:year/:month/:day/:title
+destination: ./_site
+source: .
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-paginate
+  - jekyll-remote-theme
 
 # Collections
 collections:
@@ -18,16 +59,34 @@ collections:
 
 # Defaults
 defaults:
+  # Projects
   - scope:
       path: ""
       type: "projects"
     values:
-      layout: "project"
+      layout: "article"
+      sidebar:
+        nav: false
+      license: false
+      show_edit_on_github: false
+      show_subscribe: false
+      pageview: false
+      mathjax: true
+      mermaid: true
+  # Articles
   - scope:
       path: ""
       type: "articles"
     values:
       layout: "article"
+      sidebar:
+        nav: false
+      license: false
+      show_edit_on_github: false
+      show_subscribe: false
+      pageview: false
+      mathjax: true
+      mermaid: true
 
 # Exclude from processing
 exclude:
@@ -38,3 +97,11 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
+  - README.md
+  - DEVELOPER.md
+  - DEPLOYMENT.md
+  - WORKFLOW.md
+  - DOCS.md
+  - LICENSE
+  - THEME-SETUP.md
+  - MIGRATION-COMPLETE.md

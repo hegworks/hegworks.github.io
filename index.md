@@ -1,113 +1,87 @@
 ---
-layout: default
-title: Home
+layout: landing
+title: Welcome
 ---
 
-<div class="home-container">
-  <header class="home-header">
+<div class="hero hero--dark" style='background-image: url("/assets/images/hero-bg.jpg");'>
+  <div class="hero__content">
     <h1>Welcome to {{ site.title }}</h1>
-    <p class="site-description">{{ site.description }}</p>
-  </header>
-
-  <div class="button-container">
-    <a href="/projects/" class="home-button projects-button">
-      <span class="button-icon">🚀</span>
-      <span class="button-text">Projects</span>
-      <span class="button-description">Explore my work and creations</span>
-    </a>
-    
-    <a href="/articles/" class="home-button articles-button">
-      <span class="button-icon">📝</span>
-      <span class="button-text">Articles</span>
-      <span class="button-description">Read my thoughts and writings</span>
-    </a>
+    <p>{{ site.author.bio }}</p>
+    <div style="margin-top: 2rem;">
+      <a class="button button--primary button--rounded button--lg" href="/projects/">View Projects</a>
+      <a class="button button--secondary button--rounded button--lg" href="/articles/">Read Articles</a>
+    </div>
   </div>
 </div>
 
 <style>
-.home-container {
+.hero {
+  padding: 8rem 1rem;
+  text-align: center;
+  background-color: #1a1a1a;
+  background-size: cover;
+  background-position: center;
+}
+
+.hero__content {
   max-width: 800px;
   margin: 0 auto;
-  padding: 40px 20px;
-  text-align: center;
 }
 
-.home-header {
-  margin-bottom: 60px;
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
 }
 
-.home-header h1 {
-  font-size: 2.5em;
-  margin-bottom: 10px;
-  color: #333;
+.hero p {
+  font-size: 1.3rem;
+  color: #cccccc;
+  margin-bottom: 2rem;
 }
 
-.site-description {
-  font-size: 1.2em;
-  color: #666;
-}
-
-.button-container {
-  display: flex;
-  gap: 30px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.home-button {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 40px 30px;
-  width: 250px;
-  background: #f8f9fa;
-  border: 2px solid #e0e0e0;
-  border-radius: 12px;
+.button {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  margin: 0.5rem;
   text-decoration: none;
+  border-radius: 50px;
+  font-weight: 500;
   transition: all 0.3s ease;
-  cursor: pointer;
 }
 
-.home-button:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-  border-color: #007bff;
+.button--primary {
+  background-color: #3498db;
+  color: white;
 }
 
-.projects-button:hover {
-  border-color: #28a745;
+.button--primary:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
 }
 
-.articles-button:hover {
-  border-color: #17a2b8;
+.button--secondary {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
 }
 
-.button-icon {
-  font-size: 3em;
-  margin-bottom: 15px;
+.button--secondary:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
 }
 
-.button-text {
-  font-size: 1.5em;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 8px;
-}
-
-.button-description {
-  font-size: 0.9em;
-  color: #666;
-}
-
-@media (max-width: 600px) {
-  .button-container {
-    flex-direction: column;
-    align-items: center;
+@media (max-width: 768px) {
+  .hero {
+    padding: 4rem 1rem;
   }
   
-  .home-button {
-    width: 100%;
-    max-width: 300px;
+  .hero h1 {
+    font-size: 2rem;
+  }
+  
+  .hero p {
+    font-size: 1.1rem;
   }
 }
 </style>
