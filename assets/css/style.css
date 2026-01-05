@@ -1,0 +1,296 @@
+/* ================================
+   GLOBAL STYLES
+   ================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #ffffff;
+}
+
+/* ================================
+   NAVIGATION
+   ================================ */
+
+.site-nav {
+  background-color: #2c3e50;
+  padding: 1rem 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.site-title:hover {
+  color: #3498db;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: #ecf0f1;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #3498db;
+}
+
+/* ================================
+   MAIN CONTENT
+   ================================ */
+
+.page-content {
+  min-height: calc(100vh - 180px);
+  padding: 40px 20px;
+}
+
+/* ================================
+   COLLECTION PAGES (Projects & Articles)
+   ================================ */
+
+.collection-page {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.collection-page h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+  color: #2c3e50;
+}
+
+.page-description {
+  font-size: 1.2em;
+  color: #7f8c8d;
+  margin-bottom: 40px;
+}
+
+.items-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.item-card {
+  background: #f8f9fa;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 25px;
+  transition: all 0.3s ease;
+}
+
+.item-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  border-color: #3498db;
+}
+
+.item-card h2 {
+  margin-bottom: 10px;
+  font-size: 1.5em;
+}
+
+.item-card h2 a {
+  color: #2c3e50;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.item-card h2 a:hover {
+  color: #3498db;
+}
+
+.item-excerpt {
+  color: #555;
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.item-date {
+  color: #95a5a6;
+  font-size: 0.9em;
+  font-style: italic;
+}
+
+.no-items {
+  text-align: center;
+  color: #95a5a6;
+  font-size: 1.2em;
+  margin-top: 50px;
+}
+
+/* ================================
+   DETAIL PAGES (Individual Project/Article)
+   ================================ */
+
+.project-detail,
+.article-detail {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 8px;
+}
+
+.project-header,
+.article-header {
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #ecf0f1;
+}
+
+.project-header h1,
+.article-header h1 {
+  font-size: 2.5em;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.project-date,
+.article-date {
+  color: #95a5a6;
+  font-style: italic;
+}
+
+.project-content,
+.article-content {
+  line-height: 1.8;
+  font-size: 1.1em;
+}
+
+.project-content h2,
+.article-content h2 {
+  margin-top: 30px;
+  margin-bottom: 15px;
+  color: #34495e;
+}
+
+.project-content h3,
+.article-content h3 {
+  margin-top: 25px;
+  margin-bottom: 12px;
+  color: #34495e;
+}
+
+.project-content ul,
+.article-content ul,
+.project-content ol,
+.article-content ol {
+  margin-left: 30px;
+  margin-bottom: 20px;
+}
+
+.project-content code,
+.article-content code {
+  background-color: #f4f4f4;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-family: 'Courier New', monospace;
+}
+
+.project-content pre,
+.article-content pre {
+  background-color: #f4f4f4;
+  padding: 15px;
+  border-radius: 5px;
+  overflow-x: auto;
+  margin: 20px 0;
+}
+
+.project-content pre code,
+.article-content pre code {
+  background-color: transparent;
+  padding: 0;
+}
+
+.project-footer,
+.article-footer {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #ecf0f1;
+}
+
+.back-link {
+  color: #3498db;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.back-link:hover {
+  color: #2980b9;
+}
+
+/* ================================
+   FOOTER
+   ================================ */
+
+.site-footer {
+  background-color: #2c3e50;
+  color: #ecf0f1;
+  padding: 20px 0;
+  margin-top: 60px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+/* ================================
+   RESPONSIVE DESIGN
+   ================================ */
+
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .nav-links {
+    gap: 20px;
+  }
+
+  .items-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-detail,
+  .article-detail {
+    padding: 20px;
+  }
+
+  .collection-page h1 {
+    font-size: 2em;
+  }
+}
