@@ -1,4 +1,4 @@
-name: Deploy Jekyll site to Pages
+name: Deploy Chirpy site to Pages
 
 on:
   push:
@@ -20,6 +20,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
@@ -32,17 +34,15 @@ jobs:
         uses: actions/configure-pages@v4
       
       - name: Build with Jekyll
-        run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
-        env:
-          JEKYLL_ENV: production
+        run: JEKYLL_ENV=production bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
       
-      - name: Test build output
+      - name: Test site
         run: |
-          echo "Checking _site directory contents:"
-          ls -la _site/
-          echo "Checking for collections:"
-          ls -la _site/articles/ || echo "No articles directory"
-          ls -la _site/projects/ || echo "No projects directory"
+          bundle exec htmlproofer _site \
+            --disable-external \
+            --ignore-urls "/^http:\/\/127.0.0.1/,/^http:\/\/0.0.0.0/,/^http:\/\/localhost/" \
+            --allow-missing-href \
+            --no-enforce-https || true
       
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

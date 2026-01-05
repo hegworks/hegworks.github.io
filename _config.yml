@@ -1,123 +1,102 @@
-# Site Settings
+# Site settings
 title: HegWorks
-description: Game Engine Programmer | Building tools and engines from scratch
-baseurl: "" # Empty for user site (hegworks.github.io)
-url: "https://hegworks.github.io" # Your GitHub Pages URL
+tagline: Game Engine Programming & Development
+description: Portfolio and blog of Hesam - Game Engine Programmer building tools and engines from scratch
+url: "https://hegworks.github.io"
+baseurl: ""
 
 # Author
 author:
   name: Hesam
-  bio: Game Engine Programming student at BUas. I build tools and engines from scratch.
-  avatar: # /assets/images/avatar.jpg - Add your avatar image here
   email: # your.email@example.com
-  github: # yourusername
+  twitter: # yourusername
+  github: hegworks
+  linkedin: # yourusername
 
 # Theme
-remote_theme: kitian616/jekyll-TeXt-theme
+theme: jekyll-theme-chirpy
 
-# Text Theme Configurations
-text_skin: dark
-highlight_theme: tomorrow-night
-
-# Header (sticky)
-header:
-  theme: dark
-
-# Table of Contents
-toc:
-  selectors: "h2,h3,h4"
-
-# Markdown Extensions
-markdown: kramdown
-kramdown:
-  math_engine: mathjax
-  syntax_highlighter: rouge
-
-# Sass Configuration (suppress deprecation warnings)
-sass:
-  quiet_deps: true
-  style: compressed
-  silence_deprecations:
-    - import
-    - global-builtin
-    - color-functions
-    - slash-div
-    - if-function
-
-# Disable external scripts that get blocked
-mathjax: false
-mermaid: false
-chart: false
-
-# Sources - host libraries locally to avoid ad blockers
-sources: # ← If this doesn't work, we'll need custom head includes
+# Appearance
+timezone: Europe/Amsterdam
+avatar: # /assets/img/avatar.jpg
 
 # Build settings
-permalink: /:year/:month/:day/:title
-destination: ./_site
-source: .
+markdown: kramdown
+highlighter: rouge
+
+kramdown:
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: 'highlight'
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
+
+# Pagination
+paginate: 10
+paginate_path: "/page:num/"
+
+# Archives
+jekyll-archives:
+  enabled:
+    - categories
+    - tags
+  layouts:
+    category: category
+    tag: tag
+  permalinks:
+    tag: /tags/:name/
+    category: /categories/:name/
+
+# Table of Contents
+toc: true
+
+# Code highlighting theme
+code_theme: dark
 
 # Plugins
 plugins:
-  - jekyll-feed
-  - jekyll-seo-tag
-  - jekyll-sitemap
   - jekyll-paginate
-  - jekyll-remote-theme
+  - jekyll-redirect-from
+  - jekyll-seo-tag
+  - jekyll-archives
+  - jekyll-sitemap
+  - jekyll-include-cache
 
-# Collections
-collections:
-  projects:
-    output: true
-    permalink: /projects/:title/
-  articles:
-    output: true
-    permalink: /articles/:title/
+# Sass
+sass:
+  style: compressed
 
 # Defaults
 defaults:
-  # Projects
   - scope:
       path: ""
-      type: "projects"
+      type: posts
     values:
-      layout: "article"
-      show_title: true
-      show_edit_on_github: false
-      show_subscribe: false
-      pageview: false
-      license: false
-      aside:
-        toc: true
-  # Articles
+      layout: post
+      comments: false
+      toc: true
+      permalink: /posts/:title/
   - scope:
-      path: ""
-      type: "articles"
+      path: "_posts/projects"
     values:
-      layout: "article"
-      show_title: true
-      show_edit_on_github: false
-      show_subscribe: false
-      pageview: false
-      license: false
-      aside:
-        toc: true
+      categories: [projects]
+  - scope:
+      path: "_posts/articles"
+    values:
+      categories: [articles]
 
-# Exclude from processing
+# Exclude
 exclude:
-  - Gemfile
-  - Gemfile.lock
-  - node_modules
-  - vendor/bundle/
-  - vendor/cache/
-  - vendor/gems/
-  - vendor/ruby/
+  - "*.gem"
+  - "*.gemspec"
+  - docs
+  - tools
   - README.md
-  - DEVELOPER.md
-  - DEPLOYMENT.md
-  - WORKFLOW.md
-  - DOCS.md
   - LICENSE
-  - THEME-SETUP.md
-  - MIGRATION-COMPLETE.md
-  - FEATURES-SHOWCASED.md
+  - rollup.config.js
+  - package*.json
+  - node_modules
+  - vendor
