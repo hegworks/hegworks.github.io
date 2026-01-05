@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Articles
+permalink: /articles/
 ---
 
 <div class="articles-list">

@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Projects
+permalink: /projects/
 ---
 
 <div class="projects-grid">
