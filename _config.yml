@@ -1,8 +1,8 @@
 # Site Settings
 title: HegWorks
 description: Game Engine Programmer | Building tools and engines from scratch
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site
+baseurl: "" # Empty for user site (hegworks.github.io)
+url: "https://hegworks.github.io" # Your GitHub Pages URL
 
 # Author
 author:
@@ -69,19 +69,13 @@ plugins:
 collections:
   projects:
     output: true
-    permalink: /projects/:name/
+    permalink: /projects/:title/
   articles:
     output: true
-    permalink: /articles/:name/
+    permalink: /articles/:title/
 
 # Defaults
 defaults:
-  # All pages/posts
-  - scope:
-      path: ""
-    values:
-      layout: article
-      header: true
   # Projects
   - scope:
       path: ""

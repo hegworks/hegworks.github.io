@@ -1,26 +1,20 @@
 name: Deploy Jekyll site to Pages
 
 on:
-  # Runs on pushes targeting the default branch
   push:
     branches: ["main"]
-
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# Allow only one concurrent deployment
 concurrency:
   group: "pages"
   cancel-in-progress: false
 
 jobs:
-  # Build job
   build:
     runs-on: ubuntu-latest
     steps:
@@ -42,10 +36,17 @@ jobs:
         env:
           JEKYLL_ENV: production
       
+      - name: Test build output
+        run: |
+          echo "Checking _site directory contents:"
+          ls -la _site/
+          echo "Checking for collections:"
+          ls -la _site/articles/ || echo "No articles directory"
+          ls -la _site/projects/ || echo "No projects directory"
+      
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
 
-  # Deployment job
   deploy:
     environment:
       name: github-pages
