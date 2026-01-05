@@ -2,6 +2,10 @@ source "https://rubygems.org"
 
 gem "jekyll", "~> 4.4"
 
+# Silence Ruby 3.5 warnings
+gem "logger"
+gem "fiddle"
+
 # Windows and JRuby does not include zoneinfo files
 gem "tzinfo", "~> 2.0"
 gem "tzinfo-data", platforms: [:windows]

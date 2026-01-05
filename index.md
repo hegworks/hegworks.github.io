@@ -1,87 +1,72 @@
 ---
-layout: landing
-title: Welcome
+layout: page
+title: Home
+header: true
+article_header:
+  type: overlay
+  theme: dark
+  background_color: '#1a1a1a'
+  height: 50vh
 ---
 
-<div class="hero hero--dark" style='background-image: url("/assets/images/hero-bg.jpg");'>
-  <div class="hero__content">
-    <h1>Welcome to {{ site.title }}</h1>
-    <p>{{ site.author.bio }}</p>
-    <div style="margin-top: 2rem;">
-      <a class="button button--primary button--rounded button--lg" href="/projects/">View Projects</a>
-      <a class="button button--secondary button--rounded button--lg" href="/articles/">Read Articles</a>
-    </div>
+<div class="home-intro">
+  <h1 class="home-title">{{ site.title }}</h1>
+  <p class="home-description">{{ site.author.bio }}</p>
+  
+  <div class="home-buttons">
+    <a class="button button--primary button--pill button--lg" href="/projects/">
+      View Projects
+    </a>
+    <a class="button button--secondary button--pill button--lg" href="/articles/">
+      Read Articles
+    </a>
   </div>
 </div>
 
 <style>
-.hero {
-  padding: 8rem 1rem;
+.home-intro {
   text-align: center;
-  background-color: #1a1a1a;
-  background-size: cover;
-  background-position: center;
-}
-
-.hero__content {
+  padding: 3rem 1rem;
   max-width: 800px;
   margin: 0 auto;
 }
 
-.hero h1 {
-  font-size: 3rem;
+.home-title {
+  font-size: 2.5rem;
   margin-bottom: 1rem;
-  color: #ffffff;
+  font-weight: 700;
 }
 
-.hero p {
-  font-size: 1.3rem;
-  color: #cccccc;
+.home-description {
+  font-size: 1.2rem;
   margin-bottom: 2rem;
+  opacity: 0.9;
 }
 
-.button {
-  display: inline-block;
-  padding: 0.75rem 2rem;
-  margin: 0.5rem;
-  text-decoration: none;
-  border-radius: 50px;
-  font-weight: 500;
-  transition: all 0.3s ease;
-}
-
-.button--primary {
-  background-color: #3498db;
-  color: white;
-}
-
-.button--primary:hover {
-  background-color: #2980b9;
-  transform: translateY(-2px);
-}
-
-.button--secondary {
-  background-color: transparent;
-  color: white;
-  border: 2px solid white;
-}
-
-.button--secondary:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  transform: translateY(-2px);
+.home-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
 }
 
 @media (max-width: 768px) {
-  .hero {
-    padding: 4rem 1rem;
-  }
-  
-  .hero h1 {
+  .home-title {
     font-size: 2rem;
   }
   
-  .hero p {
+  .home-description {
     font-size: 1.1rem;
+  }
+  
+  .home-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .button {
+    width: 100%;
   }
 }
 </style>

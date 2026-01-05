@@ -1,0 +1,33 @@
+<!-- Custom head additions -->
+<style>
+/* Sticky header */
+.root[data-is-touch="false"] .header {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 1000 !important;
+}
+
+/* Mobile sticky header */
+@media (max-width: 768px) {
+  .header {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 1000 !important;
+  }
+}
+
+/* Ensure header doesn't get hidden */
+.header--dark {
+  background-color: #1a1a1a !important;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+/* Fix home page header overlap */
+.page__header {
+  margin-top: 0 !important;
+}
+
+.article__header--overlay {
+  margin-top: 0 !important;
+}
+</style>

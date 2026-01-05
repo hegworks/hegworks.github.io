@@ -19,9 +19,13 @@ remote_theme: kitian616/jekyll-TeXt-theme
 text_skin: dark
 highlight_theme: tomorrow-night
 
+# Header (sticky)
+header:
+  theme: dark
+
 # Table of Contents
 toc:
-  selectors: "h1,h2,h3"
+  selectors: "h2,h3,h4"
 
 # Markdown Extensions
 markdown: kramdown
@@ -29,11 +33,24 @@ kramdown:
   math_engine: mathjax
   syntax_highlighter: rouge
 
-# Enable Extensions
-mathjax: true
-mathjax_autoNumber: true
-mermaid: true
-chart: true
+# Sass Configuration (suppress deprecation warnings)
+sass:
+  quiet_deps: true
+  style: compressed
+  silence_deprecations:
+    - import
+    - global-builtin
+    - color-functions
+    - slash-div
+    - if-function
+
+# Disable external scripts that get blocked
+mathjax: false
+mermaid: false
+chart: false
+
+# Sources - host libraries locally to avoid ad blockers
+sources: # ← If this doesn't work, we'll need custom head includes
 
 # Build settings
 permalink: /:year/:month/:day/:title
@@ -59,34 +76,38 @@ collections:
 
 # Defaults
 defaults:
+  # All pages/posts
+  - scope:
+      path: ""
+    values:
+      layout: article
+      header: true
   # Projects
   - scope:
       path: ""
       type: "projects"
     values:
       layout: "article"
-      sidebar:
-        nav: false
-      license: false
+      show_title: true
       show_edit_on_github: false
       show_subscribe: false
       pageview: false
-      mathjax: true
-      mermaid: true
+      license: false
+      aside:
+        toc: true
   # Articles
   - scope:
       path: ""
       type: "articles"
     values:
       layout: "article"
-      sidebar:
-        nav: false
-      license: false
+      show_title: true
       show_edit_on_github: false
       show_subscribe: false
       pageview: false
-      mathjax: true
-      mermaid: true
+      license: false
+      aside:
+        toc: true
 
 # Exclude from processing
 exclude:
@@ -105,3 +126,4 @@ exclude:
   - LICENSE
   - THEME-SETUP.md
   - MIGRATION-COMPLETE.md
+  - FEATURES-SHOWCASED.md
