@@ -1,29 +1,16 @@
+# frozen_string_literal: true
+
+gem "csv"
+gem "base64"
 source "https://rubygems.org"
 
-gem "jekyll", "~> 4.3.0"
-gem "jekyll-theme-chirpy", "~> 7.2"
+gem "jekyll-theme-chirpy", "~> 7.4", ">= 7.4.1"
 
-# Ruby 3.4+ required gems
-gem "csv"
-gem "logger"
-gem "fiddle"
-gem "base64"
-
-# Windows support
-gem "tzinfo", ">= 1", "< 3"
-gem "tzinfo-data"
-gem "wdm", "~> 0.2", platforms: [:windows]
-
-# Testing
 gem "html-proofer", "~> 5.0", group: :test
 
-# Jekyll plugins
-group :jekyll_plugins do
-  gem "jekyll-remote-theme"
-  gem "jekyll-paginate"
-  gem "jekyll-redirect-from"
-  gem "jekyll-seo-tag"
-  gem "jekyll-archives"
-  gem "jekyll-sitemap"
-  gem "jekyll-include-cache"
+platforms :mingw, :x64_mingw, :mswin, :jruby do
+  gem "tzinfo", ">= 1", "< 3"
+  gem "tzinfo-data"
 end
+
+gem "wdm", "~> 0.2.0", :platforms => [:mingw, :x64_mingw, :mswin]
