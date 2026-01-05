@@ -1,0 +1,116 @@
+---
+layout: page
+---
+
+<div class="home-hero">
+  <h1 class="home-title">{{ site.title }}</h1>
+  <p class="home-tagline">{{ site.tagline }}</p>
+  <p class="home-description">{{ site.description }}</p>
+  
+  <div class="home-buttons">
+    <a href="/categories/projects/" class="btn-custom btn-primary">
+      <i class="fas fa-rocket"></i> View Projects
+    </a>
+    <a href="/categories/articles/" class="btn-custom btn-secondary">
+      <i class="fas fa-book"></i> Read Articles
+    </a>
+  </div>
+</div>
+
+<style>
+.home-hero {
+  text-align: center;
+  padding: 4rem 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.home-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.home-tagline {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  opacity: 0.9;
+}
+
+.home-description {
+  font-size: 1.1rem;
+  margin-bottom: 3rem;
+  opacity: 0.7;
+  line-height: 1.6;
+}
+
+.home-buttons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-custom {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-custom:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 2px solid;
+  border-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%) 1;
+  color: var(--text-color);
+}
+
+@media (max-width: 768px) {
+  .home-hero {
+    padding: 3rem 1.5rem;
+  }
+  
+  .home-title {
+    font-size: 2.5rem;
+  }
+  
+  .home-tagline {
+    font-size: 1.3rem;
+  }
+  
+  .home-description {
+    font-size: 1rem;
+  }
+  
+  .home-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .btn-custom {
+    width: 100%;
+    justify-content: center;
+  }
+}
+</style>

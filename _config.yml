@@ -34,10 +34,6 @@ kramdown:
       line_numbers: true
       start_line: 1
 
-# Pagination
-paginate: 10
-paginate_path: "/page:num/"
-
 # Archives
 jekyll-archives:
   enabled:
@@ -58,7 +54,6 @@ code_theme: dark
 
 # Plugins
 plugins:
-  - jekyll-paginate
   - jekyll-redirect-from
   - jekyll-seo-tag
   - jekyll-archives

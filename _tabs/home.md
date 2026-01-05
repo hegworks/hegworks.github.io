@@ -1,7 +1,8 @@
 ---
-layout: home
+layout: page
 icon: fas fa-home
 order: 1
+title: Home
 ---
 
 <div style="text-align: center; padding: 3rem 1rem;">
@@ -11,10 +12,10 @@ order: 1
   </p>
   
   <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem;">
-    <a href="/categories/projects/" class="btn btn-primary">
+    <a href="/categories/projects/" class="btn btn-primary" style="padding: 0.5rem 1.5rem; text-decoration: none; border-radius: 0.5rem; background-color: #0d6efd; color: white;">
       <i class="fas fa-rocket"></i> View Projects
     </a>
-    <a href="/categories/articles/" class="btn btn-outline-primary">
+    <a href="/categories/articles/" class="btn btn-outline-primary" style="padding: 0.5rem 1.5rem; text-decoration: none; border-radius: 0.5rem; border: 2px solid #0d6efd; color: #0d6efd;">
       <i class="fas fa-book"></i> Read Articles
     </a>
   </div>
