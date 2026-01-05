@@ -1,28 +1,8 @@
 ---
-icon: fas fa-user
-order: 5
-title: About Me
+# the default layout is 'page'
+icon: fas fa-info-circle
+order: 4
 ---
 
-## About Me
-
-Game Engine Programming student at Breda University of Applied Sciences (BUas).
-
-I'm passionate about low-level systems programming, graphics, and building tools that help others create amazing experiences.
-
-## Skills
-
-- **Languages:** C++, C, Python
-- **Graphics:** OpenGL, GLSL, Rendering pipelines  
-- **Tools:** ImGui, Git, Visual Studio, CMake
-- **Libraries:** EnTT, GLM, tinygltf, stb
-
-## Currently Learning
-
-- Vulkan API
-- Advanced rendering techniques
-- Multi-threaded game engine architectures
-
----
-
-Feel free to reach out if you want to discuss game engines, graphics programming, or collaborate on projects!
+> Add Markdown syntax content to file `_tabs/about.md`{: .filepath } and it will show up on this page.
+{: .prompt-tip }
