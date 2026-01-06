@@ -5,7 +5,7 @@ source "https://rubygems.org"
 gemspec
 
 # Required plugins
-gem "jekyll", "~> 4.3.0"
+gem "jekyll", "~> 4.4.1"
 gem "jekyll-paginate"
 gem "jekyll-include-cache"
 gem "jekyll-seo-tag"
