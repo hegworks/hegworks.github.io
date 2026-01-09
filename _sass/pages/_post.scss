@@ -364,7 +364,6 @@ header {
 
   &.invisible {
     top: -#{v.$topbar-height};
-    transition: none  border-bottom: 1px solid var(--main-border-color);
 olor);
   border-color: var(--btn-border-color);
   border-radius: v.$radius-lg;
@@ -517,4 +516,43 @@ h4.active-heading::before {
   width: 3px !important;
   height: 60% !important;
   background-color: rgb(100 255 50) !important;
+}
+
+/* Auto-wrapped section styling */
+.post-section {
+  background: linear-gradient(
+    135deg,
+    var(--card-bg) 0%,
+    color-mix(in srgb, var(--card-bg) 95%, var(--toc-highlight) 5%) 100%
+  );
+  padding: 2rem;
+  border-top: 4px solid var(--toc-highlight);
+  border-left: 1px solid var(--main-border-color);
+  border-right: 1px solid var(--main-border-color);
+  border-bottom: 1px solid var(--main-border-color);
+  border-radius: 0.75rem;
+  margin: 2.5rem 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+  h1 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    background: none;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    color: var(--toc-highlight);
+  }
+
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: 1.5rem;
+
+    &:first-of-type {
+      margin-top: 0;
+    }
+  }
 }
