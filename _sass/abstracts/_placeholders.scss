@@ -1,5 +1,5 @@
-@use 'variables' as v;
-@use 'mixins' as mx;
+@use "variables" as v;
+@use "mixins" as mx;
 
 %heading {
   color: var(--heading-color);

@@ -1,7 +1,7 @@
-@use '../abstracts/variables' as v;
-@use '../abstracts/breakpoints' as bp;
-@use '../abstracts/mixins' as mx;
-@use '../abstracts/placeholders';
+@use "../abstracts/variables" as v;
+@use "../abstracts/breakpoints" as bp;
+@use "../abstracts/mixins" as mx;
+@use "../abstracts/placeholders";
 
 .highlighter-rouge {
   color: var(--highlighter-rouge-color);
@@ -105,7 +105,7 @@ td.rouge-code {
   }
 }
 
-div[class^='language-'] {
+div[class^="language-"] {
   @extend %rounded;
   @extend %code-snippet-bg;
 
@@ -130,7 +130,7 @@ div[class^='language-'] {
       $dot-margin: 1rem;
 
       &::before {
-        content: '';
+        content: "";
         display: inline-block;
         margin-left: $dot-margin;
         width: v.$code-dot-size;

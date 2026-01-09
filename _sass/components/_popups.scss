@@ -1,6 +1,6 @@
-@use '../abstracts/variables' as v;
-@use '../abstracts/breakpoints' as bp;
-@use '../abstracts/placeholders';
+@use "../abstracts/variables" as v;
+@use "../abstracts/breakpoints" as bp;
+@use "../abstracts/placeholders";
 
 /* PWA update popup */
 #notification {
@@ -157,7 +157,7 @@
 
   &::after {
     display: flex;
-    content: '';
+    content: "";
     position: relative;
     background: linear-gradient(transparent, var(--card-bg) 70%);
     height: $curtain-height;

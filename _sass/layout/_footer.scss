@@ -1,7 +1,7 @@
-@use '../abstracts/breakpoints' as bp;
-@use '../abstracts/variables' as v;
-@use '../abstracts/mixins' as mx;
-@use '../abstracts/placeholders';
+@use "../abstracts/breakpoints" as bp;
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as mx;
+@use "../abstracts/placeholders";
 
 footer {
   background-color: var(--main-bg);

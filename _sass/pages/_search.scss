@@ -1,6 +1,6 @@
-@use '../abstracts/breakpoints' as bp;
-@use '../abstracts/variables' as v;
-@use '../abstracts/placeholders';
+@use "../abstracts/breakpoints" as bp;
+@use "../abstracts/variables" as v;
+@use "../abstracts/placeholders";
 
 search {
   display: flex;
@@ -174,7 +174,7 @@ search {
     margin: 0 1.25rem 1rem 0;
 
     &::before {
-      content: '#';
+      content: "#";
       color: var(--text-muted-color);
       padding-right: 0.2rem;
     }
