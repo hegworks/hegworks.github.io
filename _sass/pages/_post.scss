@@ -1,7 +1,7 @@
-@use '../abstracts/variables' as v;
-@use '../abstracts/breakpoints' as bp;
-@use '../abstracts/mixins' as mx;
-@use '../abstracts/placeholders';
+@use "../abstracts/variables" as v;
+@use "../abstracts/breakpoints" as bp;
+@use "../abstracts/mixins" as mx;
+@use "../abstracts/placeholders";
 
 %-btn-post-nav {
   width: 50%;
@@ -10,7 +10,7 @@
 }
 
 @mixin -dot($pl: 0.25rem, $pr: 0.25rem) {
-  content: '\2022';
+  content: "\2022";
   padding-left: $pl;
   padding-right: $pr;
 }
@@ -49,7 +49,7 @@ header {
   @extend %text-sm;
 
   margin-top: 6rem;
-  border-bottom: 1px double var(--main-border-color);
+  border-bottom: 2px double var(--main-border-color);
 
   .license-wrapper {
     line-height: 1.2rem;
@@ -129,7 +129,7 @@ header {
   /* See: https://github.com/justinribeiro/share-to-mastodon#properties */
   --wc-stm-font-family: v.$font-family-base;
   --wc-stm-dialog-background-color: var(--card-bg);
-  --wc-stm-form-button-border: 1px solid var(--btn-border-color);
+  --wc-stm-form-button-border: 1.5px solid var(--btn-border-color);
   --wc-stm-form-submit-background-color: var(--sidebar-btn-bg);
   --wc-stm-form-cancel-background-color: var(--sidebar-btn-bg);
   --wc-stm-form-button-background-color-hover: #007bff;
@@ -240,7 +240,7 @@ header {
 /* TOC panel */
 
 %top-cover {
-  content: '';
+  content: "";
   display: block;
   position: -webkit-sticky;
   position: sticky;
@@ -320,7 +320,7 @@ header {
   }
 
   &::after {
-    content: '';
+    content: "";
     position: fixed;
     bottom: 0;
     width: 15%;
@@ -345,6 +345,7 @@ header {
   height: v.$topbar-height;
   background: var(--main-bg);
   border-bottom: 1px solid var(--main-border-color);
+
   transition: all 0.2s ease-in-out;
 
   @extend %btn-color;
@@ -363,12 +364,8 @@ header {
 
   &.invisible {
     top: -#{v.$topbar-height};
-    transition: none;
-  }
-}
-
-#toc-solo-trigger {
-  color: var(--text-muted-color);
+    transition: none  border-bottom: 1px solid var(--main-border-color);
+olor);
   border-color: var(--btn-border-color);
   border-radius: v.$radius-lg;
 
@@ -477,7 +474,7 @@ header {
   @include mx.label(inherit, 400, inherit);
 
   &::after {
-    content: ':';
+    content: ":";
   }
 }
 
@@ -487,10 +484,37 @@ header {
   }
 }
 
+h1,
 h2,
 h3,
 h4 {
   @include bp.xl {
     scroll-margin-top: 2rem;
   }
+}
+
+h1.active-heading,
+h2.active-heading,
+h3.active-heading,
+h4.active-heading {
+  color: rgb(100 255 50) !important;
+  padding: 0.5rem 1rem !important;
+  margin-left: -1rem !important;
+  margin-right: -1rem !important;
+  transition: all 0.1s ease !important;
+  position: relative !important;
+}
+
+h1.active-heading::before,
+h2.active-heading::before,
+h3.active-heading::before,
+h4.active-heading::before {
+  content: "" !important;
+  position: absolute !important;
+  left: -0.3rem !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: 3px !important;
+  height: 60% !important;
+  background-color: rgb(100 255 50) !important;
 }

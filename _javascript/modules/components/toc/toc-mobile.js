@@ -24,6 +24,23 @@ export class TocMobile {
     scrollSmooth: false,
     collapseDepth: 4,
     headingsOffset: 16 * 3, // 3rem (matches topbar height)
+    scrollSpy: true,
+    scrollSpyCallback: function (sections) {
+      // Remove active class from all headings
+      document
+        .querySelectorAll(".content h1, .content h2, .content h3, .content h4")
+        .forEach((h) => {
+          h.classList.remove("active-heading");
+        });
+      // Add active class to current heading - sections is a list of currently active headings
+      if (sections && sections.length > 0) {
+        const section = sections[0];
+        const activeHeading = document.querySelector(`[id="${section.id}"]`);
+        if (activeHeading) {
+          activeHeading.classList.add("active-heading");
+        }
+      }
+    },
   };
 
   static initBar() {
@@ -121,5 +138,41 @@ export class TocMobile {
     tocbot.init(this.options);
     this.listenAnchors();
     this.initComponents();
+    this.initActiveHeadingObserver();
+  }
+
+  static initActiveHeadingObserver() {
+    const headings = document.querySelectorAll(
+      ".content h1, .content h2, .content h3, .content h4"
+    );
+
+    if (headings.length === 0) return;
+
+    const updateActiveHeading = () => {
+      const headingsOffset = 48; // 3rem in pixels (matches TOC headingsOffset)
+      let activeHeading = null;
+      let maxTop = -Infinity;
+
+      headings.forEach((heading) => {
+        const rect = heading.getBoundingClientRect();
+        // Find the heading closest to the trigger point (largest rect.top that is <= 48)
+        if (rect.top <= headingsOffset && rect.top > maxTop) {
+          activeHeading = heading;
+          maxTop = rect.top;
+        }
+      });
+
+      // Remove active class from all headings
+      headings.forEach((h) => h.classList.remove("active-heading"));
+      // Add active class to current heading
+      if (activeHeading) {
+        activeHeading.classList.add("active-heading");
+      }
+    };
+
+    // Update on scroll
+    window.addEventListener("scroll", updateActiveHeading, { passive: true });
+    // Initial check
+    updateActiveHeading();
   }
 }
