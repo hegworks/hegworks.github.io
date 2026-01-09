@@ -49,7 +49,7 @@ header {
   @extend %text-sm;
 
   margin-top: 6rem;
-  border-bottom: 2px double var(--main-border-color);
+  border-bottom: 1px double var(--main-border-color);
 
   .license-wrapper {
     line-height: 1.2rem;
@@ -129,7 +129,7 @@ header {
   /* See: https://github.com/justinribeiro/share-to-mastodon#properties */
   --wc-stm-font-family: v.$font-family-base;
   --wc-stm-dialog-background-color: var(--card-bg);
-  --wc-stm-form-button-border: 1.5px solid var(--btn-border-color);
+  --wc-stm-form-button-border: 1px solid var(--btn-border-color);
   --wc-stm-form-submit-background-color: var(--sidebar-btn-bg);
   --wc-stm-form-cancel-background-color: var(--sidebar-btn-bg);
   --wc-stm-form-button-background-color-hover: #007bff;
@@ -345,7 +345,6 @@ header {
   height: v.$topbar-height;
   background: var(--main-bg);
   border-bottom: 1px solid var(--main-border-color);
-
   transition: all 0.2s ease-in-out;
 
   @extend %btn-color;
@@ -364,7 +363,12 @@ header {
 
   &.invisible {
     top: -#{v.$topbar-height};
-olor);
+    transition: none;
+  }
+}
+
+#toc-solo-trigger {
+  color: var(--text-muted-color);
   border-color: var(--btn-border-color);
   border-radius: v.$radius-lg;
 
