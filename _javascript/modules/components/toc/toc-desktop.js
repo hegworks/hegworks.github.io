@@ -8,7 +8,7 @@ export class TocDesktop {
     orderedList: false,
     scrollSmooth: false,
     collapseDepth: 2,
-    headingsOffset: 16 * 2 // 2rem
+    headingsOffset: 16 * 3, // 3rem (matches topbar height)
   };
 
   static refresh() {

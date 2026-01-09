@@ -2,35 +2,35 @@
  * TOC button, topbar and popup for mobile devices
  */
 
-const $tocBar = document.getElementById('toc-bar');
-const $soloTrigger = document.getElementById('toc-solo-trigger');
-const $triggers = document.getElementsByClassName('toc-trigger');
-const $popup = document.getElementById('toc-popup');
-const $btnClose = document.getElementById('toc-popup-close');
+const $tocBar = document.getElementById("toc-bar");
+const $soloTrigger = document.getElementById("toc-solo-trigger");
+const $triggers = document.getElementsByClassName("toc-trigger");
+const $popup = document.getElementById("toc-popup");
+const $btnClose = document.getElementById("toc-popup-close");
 
-const SCROLL_LOCK = 'overflow-hidden';
-const CLOSING = 'closing';
+const SCROLL_LOCK = "overflow-hidden";
+const CLOSING = "closing";
 
 export class TocMobile {
   static #invisible = true;
   static #barHeight = 16 * 3; // 3rem
 
   static options = {
-    tocSelector: '#toc-popup-content',
-    contentSelector: '.content',
-    ignoreSelector: '[data-toc-skip]',
-    headingSelector: 'h1, h2, h3, h4',
+    tocSelector: "#toc-popup-content",
+    contentSelector: ".content",
+    ignoreSelector: "[data-toc-skip]",
+    headingSelector: "h1, h2, h3, h4",
     orderedList: false,
     scrollSmooth: false,
     collapseDepth: 4,
-    headingsOffset: this.#barHeight
+    headingsOffset: 16 * 3, // 3rem (matches topbar height)
   };
 
   static initBar() {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          $tocBar.classList.toggle('invisible', entry.isIntersecting);
+          $tocBar.classList.toggle("invisible", entry.isIntersecting);
         });
       },
       { rootMargin: `-${this.#barHeight}px 0px 0px 0px` }
@@ -41,7 +41,7 @@ export class TocMobile {
   }
 
   static listenAnchors() {
-    const $anchors = document.getElementsByClassName('toc-link');
+    const $anchors = document.getElementsByClassName("toc-link");
     [...$anchors].forEach((anchor) => {
       anchor.onclick = () => this.hidePopup();
     });
@@ -62,15 +62,15 @@ export class TocMobile {
   static showPopup() {
     this.lockScroll(true);
     $popup.showModal();
-    const activeItem = $popup.querySelector('li.is-active-li');
-    activeItem.scrollIntoView({ block: 'center' });
+    const activeItem = $popup.querySelector("li.is-active-li");
+    activeItem.scrollIntoView({ block: "center" });
   }
 
   static hidePopup() {
     $popup.toggleAttribute(CLOSING);
 
     $popup.addEventListener(
-      'animationend',
+      "animationend",
       () => {
         $popup.toggleAttribute(CLOSING);
         $popup.close();
