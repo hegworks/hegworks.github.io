@@ -494,6 +494,11 @@ h4 {
   @include bp.xl {
     scroll-margin-top: 2rem;
   }
+  
+  padding: 0.5rem 1rem !important;
+  margin-left: -1rem !important;
+  margin-right: -1rem !important;
+  position: relative !important;
 }
 
 h1.active-heading,
@@ -501,11 +506,7 @@ h2.active-heading,
 h3.active-heading,
 h4.active-heading {
   color: rgb(100 255 50) !important;
-  padding: 0.5rem 1rem !important;
-  margin-left: -1rem !important;
-  margin-right: -1rem !important;
   transition: all 0.1s ease !important;
-  position: relative !important;
 }
 
 h1.active-heading::before,
