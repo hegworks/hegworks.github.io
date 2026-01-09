@@ -105,9 +105,9 @@ VS
 - Linear: control points point toward keyframes
 - Flat: control points are horizontal
 
-### How constants are handled
-
 ### Finding the extrema
+
+### How constants are handled
 
 ### Challenges of quaternions
 
