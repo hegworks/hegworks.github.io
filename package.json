@@ -20,15 +20,15 @@
     "bootstrap": "^5.3.8"
   },
   "devDependencies": {
-    "@babel/core": "^7.28.4",
-    "@babel/plugin-transform-class-properties": "^7.27.1",
-    "@babel/plugin-transform-private-methods": "^7.27.1",
-    "@babel/preset-env": "^7.28.3",
+    "@babel/core": "^7.28.6",
+    "@babel/plugin-transform-class-properties": "^7.28.6",
+    "@babel/plugin-transform-private-methods": "^7.28.6",
+    "@babel/preset-env": "^7.28.6",
     "@rollup/plugin-babel": "^6.1.0",
     "@rollup/plugin-node-resolve": "^16.0.3",
     "@rollup/plugin-terser": "^0.4.4",
     "concurrently": "^9.2.1",
     "purgecss": "^7.0.2",
-    "rollup": "^4.52.5"
+    "rollup": "^4.55.1"
   }
 }
