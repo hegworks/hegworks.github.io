@@ -1,0 +1,67 @@
+/* SVG Theme Styling */
+
+/* Container for inline SVGs */
+.svg-container {
+  display: block;
+  width: 100%;
+  margin: 1em 0;
+  overflow: hidden;
+}
+
+.svg-container svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Disable shimmer/loading animation on SVG containers */
+.svg-container,
+a:has(.svg-container),
+a:has(svg) {
+  &::before,
+  &::after {
+    display: none !important;
+    animation: none !important;
+  }
+}
+
+/* Fallback for browsers without :has() support */
+a .svg-container {
+  &::before,
+  &::after {
+    display: none !important;
+    animation: none !important;
+  }
+}
+
+/* Dark mode - default */
+svg {
+  text {
+    fill: #ffffff !important;
+  }
+
+  path,
+  circle,
+  rect,
+  line,
+  polyline {
+    stroke: #ffffff !important;
+  }
+}
+
+/* Light mode */
+html[data-mode="light"] {
+  svg {
+    text {
+      fill: #1a1a1a !important;
+    }
+
+    path,
+    circle,
+    rect,
+    line,
+    polyline {
+      stroke: #1a1a1a !important;
+    }
+  }
+}

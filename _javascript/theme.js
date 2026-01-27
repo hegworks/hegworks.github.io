@@ -4,24 +4,24 @@
  * To reduce flickering during page load, this script should be loaded synchronously.
  */
 class Theme {
-  static #modeKey = 'mode';
-  static #modeAttr = 'data-mode';
-  static #darkMedia = window.matchMedia('(prefers-color-scheme: dark)');
+  static #modeKey = "mode";
+  static #modeAttr = "data-mode";
+  static #darkMedia = window.matchMedia("(prefers-color-scheme: dark)");
   static switchable = !document.documentElement.hasAttribute(this.#modeAttr);
 
   static get DARK() {
-    return 'dark';
+    return "dark";
   }
 
   static get LIGHT() {
-    return 'light';
+    return "light";
   }
 
   /**
    * @returns {string} Theme mode identifier
    */
   static get ID() {
-    return 'theme-mode';
+    return "theme-mode";
   }
 
   /**
@@ -66,7 +66,7 @@ class Theme {
   static getThemeMapper(light, dark) {
     return {
       [this.LIGHT]: light,
-      [this.DARK]: dark
+      [this.DARK]: dark,
     };
   }
 
@@ -78,7 +78,7 @@ class Theme {
       return;
     }
 
-    this.#darkMedia.addEventListener('change', () => {
+    this.#darkMedia.addEventListener("change", () => {
       const lastMode = this.#mode;
       this.#clearMode();
 
@@ -88,6 +88,8 @@ class Theme {
     });
 
     if (!this.#hasMode) {
+      // Set dark as default theme
+      this.#setDark();
       return;
     }
 
@@ -102,10 +104,10 @@ class Theme {
    * Flips the current theme mode
    */
   static flip() {
-    if (this.#hasMode) {
-      this.#clearMode();
+    if (this.#isDarkMode) {
+      this.#setLight();
     } else {
-      this.#sysDark ? this.#setLight() : this.#setDark();
+      this.#setDark();
     }
     this.#notify();
   }
@@ -129,7 +131,7 @@ class Theme {
    * Notifies other plugins that the theme mode has changed
    */
   static #notify() {
-    window.postMessage({ id: this.ID }, '*');
+    window.postMessage({ id: this.ID }, "*");
   }
 }
 

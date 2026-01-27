@@ -1,36 +1,82 @@
 ---
 title: Timeline Animation Editor
 date: 2026-01-07 12:00:00 +0100
-categories: [ articles ]
-tags: [ custom-engine, cpp, imgui, tanim, animation ]
+categories: [articles]
+tags: [custom-engine, cpp, imgui, tanim, animation]
 description: Implementing a Timeline Animation Editor for Custom Engines
 image:
-  path: /assets/img/posts/tanim/placeholder.png
-  alt: TODO header
+  path: /assets/media/tanim/tanim_logo.png
+  alt: logo of Tanim
 ---
-
-![alt text](/assets/img/posts/tanim/placeholder.png)
 
 # Introduction
 
-## Final result
+## About the article
 
-- show demo
-- what the tool exactly is (and maybe what it isn't)
-- list what the tool can do
+I have made an open-source C++ timeline animation library for projects that are based on ImGui & ENTT. The library is fully engine-independent, and comes with a feature-rich piece-wise cubic Bezier curve editor. In this article we dive deep into the architecture of the library, and the math behind the curve.
 
-## This article
+## Prerequisites
 
-- 2 main parts
-  - design & architecture
-  - Curves
+You need to know about these items to fully understand the article, as they are used, but not explained in detail:
+
+- C++ 17+ knowledge, as the code is in C++, and some modern features like `std::any` are mentioned in the article.
+- Familiarity with ECS concepts, and experience with the ENTT library, as Tanim is made for ENTT-based projects.
+
+## Showcase
+
+<p align="center">
+  <img src="assets/media/tanim/curve_editing.gif">
+  <br>
+  <em>Rich Cubic Bezier Curve Editing</em>
+</p>
+
+<p align="center">
+  <img src="assets/media/tanim/coins_sync.gif">
+  <br>
+  <em>Reusable Animations, Flexible Playback</em>
+</p>
+
+<p align="center">
+  <img src="assets/media/tanim/cars.gif">
+  <br>
+  <em>Multi-Sequence Timeline Editing</em>
+</p>
+
+<p align="center">
+  <img src="assets/media/tanim/robot_vault.gif">
+  <br>
+  <em>Complex Multi-Property Animations</em>
+</p>
 
 # Design & Architecture
 
 ## Philosophy & Aim
 
-- designing a portable tool that is not intrusive to the engine & does not access the engine directly
-- The main calls that the engine has to make
+I developed the project with having portability in mind. As long as a project (usually a custom engine) is using ImGui for editor GUI and ENTT for ECS, integrating Tanim into it should be fairly easy.
+
+---
+
+In short, this is what Tanim needs from the user:
+
+- a few API calls to be called at correct moments (e.g., `tanim::Init();`, `tanim::Draw();`)
+- 2 data structures to be wrapped into a component that you can attach to your entities (i.e., `tanim::TimelineData` and `tanim::ComponentData`)
+- some functions to be implemented (e.g., `tanim::LogError`)
+
+![](../assets/media/tanim/aaa.svg)
+
+![](../assets/media/tanim/ex.svg)
+
+![](../assets/media/tanim/ExcalidrawSave0%20(1).svg)
+
+![](../assets/media/tanim/ExcalidrawSave0.png)
+
+![](../assets/media/tanim/ExcalidrawSave0.svg)
+
+![](../assets/media/tanim/architecture.png)
+
+![](../assets/media/tanim/architecture%201.png)
+
+![](../assets/media/tanim/architecture%202.png)
 
 ## Storing Animation Data
 
